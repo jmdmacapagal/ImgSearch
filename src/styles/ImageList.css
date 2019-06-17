@@ -1,0 +1,10 @@
+.image-list {
+    line-height: 0;
+    column-count: 4;
+}
+
+.image-list img{
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 0 10px 0;
+}

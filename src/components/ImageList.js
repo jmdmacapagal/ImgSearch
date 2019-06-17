@@ -1,14 +1,14 @@
-import './ImageList.css'
+import '../styles/ImageList.css'
 import React from 'react'
-import ImageCard from './ImageCard';
 
 const ImageList = props => {
-    const image = props.images.map(image => {
-        return <ImageCard key={image.id} images={image} />
+    const images = props.images.map(image => {
+        return <img key={image.id} src={image.urls.small} alt={image.description} className="ui fluid image" />
     })
+
     return (
         <div className="image-list">
-            { image }
+            { images }
         </div>
     )
 }

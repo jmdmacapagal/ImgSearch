@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 export default class SearchBar extends Component {
+
     state = {
         query: ''
     }
@@ -10,24 +11,25 @@ export default class SearchBar extends Component {
         this.setState({
             [name]: value
         })
+        console.log(e.target.value)
     }
 
     onFormSubmit = e => {
         e.preventDefault()
-        this.props.onSubmit(this.state.query)
+       this.props.onSubmit(this.state.query)
     }
 
     render() {
         return (
             <div className="ui segment">
                 <form className="ui form" onSubmit={this.onFormSubmit}>
-                    <div className="fields">
-                        <input
+                    <div className="field">
+                        <label>Image Search</label>
+                        <input 
                             type="text"
-                            placeholder="Search....."
                             name="query"
                             value={this.state.query}
-                            onChange={this.onInputChange}
+                            onChange={this.onInputChange} 
                         />
                     </div>
                 </form>
